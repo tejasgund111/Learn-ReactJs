@@ -1,31 +1,30 @@
-# React & Tailwind CSS Starter Pack
+"Counter Application"
 
-This is a starter pack for creating React projects with Tailwind CSS configured. It uses React version **18.2** and Tailwind CSS version **3.2**.
+Here in this tutorial we will be learning "Redux" and with the help of that we are going to create a "Counter App"
 
-## Usage
+Redux :
+Redux is a JS library for predictable and maintainable global state management.
 
-This starter pack includes a basic setup for using **Tailwind CSS with React**. To start building your own components and styles, follow these steps:
+IMP: firstly go through short documentation of Redux
+ 
+Some steps which have to be done at the start of creating the project, in case of using Redux toolkit
+1. slice must have to be created  // slice can be single of multiple
+- We create the slice by using createSlice function
+- pass this 3 things to that function -> name, initialState, reducer
+- We have to export certain things -> 
+  1. functions from the action creators
+  2. reducers
 
-1. Clone the repository to your local machine.
-    ```sh
-    git clone https://github.com/thepranaygupta/react-tailwind-css-starter-pack.git
-    ```
+2. store must have to be creared
+- store all the slices
+- store created using configureStore method 
+- input parameters of configureStore method -> reducer
+// ye sab karna hi padega
 
-1. Install the required packages.
-    ```sh
-    cd react-tailwind-css-starter-pack
-    npm install
-    ```
+React components can be linked with the Redux with the providers
 
-1. Start the development server.
-    ```sh
-    npm start
-    ```
-1. Open the project in your browser at [`http://localhost:3000`](http://localhost:3000) to view your project.
-1. Create your React components and add your styles using Tailwind classes. You can also create new CSS files and import them into your components.
+Hook to be used for fetching the data from the slice
+"useSelector hook"
 
-The project is set up to use `postcss-cli` to process your CSS files. You can add your own `tailwind.config.js` file to customize your Tailwind setup.
-
-## Contributing
-
-Contributions are welcome! If you have any suggestions or find any issues, please feel free to open an issue or a pull request.
+useDispatch hook -> useDispatch is another hook provided by React Redux, which allows functional components to dispatch actions to the Redux store. 
+ex. here in this app it is increment and decrement

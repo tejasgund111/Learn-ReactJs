@@ -1,5 +1,7 @@
 "Shopping Cart Application"
 
+Deployed here on this link ->> "https://ecomzy-tg.netlify.app/"
+
 Here in this project we are going to create a shopping cart application , and the concept we are going to use is 'Redux'
 
 

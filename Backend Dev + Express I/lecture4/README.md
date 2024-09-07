@@ -1,4 +1,4 @@
-
+"Posts App"
 
 -----------------------------------------------------------------------------------------
 something new :
@@ -53,5 +53,5 @@ const updatedPost = await Post.findByIdAndUpdate(post, { $push: { comments: save
 -----------------------------------------------------------------------------------------
 
 we can create a new data by using "create" method or by using "save" method
-
+   
 -----------------------------------------------------------------------------------------

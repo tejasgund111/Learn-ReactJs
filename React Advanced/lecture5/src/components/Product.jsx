@@ -64,5 +64,4 @@ const Product = ({ post }) => {
 
 export default Product;
 
-
 // agar cart ke andar tumhari current item present hai to "remove item" button dikhao ya phir "add to cart" button dikhao

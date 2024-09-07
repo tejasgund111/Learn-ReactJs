@@ -1,6 +1,6 @@
 "Todoapp"
 
-Here in this section we are goint to create a "toDoApp"
+Here in this section we are goint to create a "ToDoApp"
 
 We will define the schema in "models" directory inside "Todo.js" file
 Schema => description of your data is schema

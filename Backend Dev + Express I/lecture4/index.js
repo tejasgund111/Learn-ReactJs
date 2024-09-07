@@ -17,6 +17,7 @@ app.use("/api/v1", blog);
 const connectWithDb = require("./config/database");
 connectWithDb();
 
+// listening on port
 app.listen(PORT, ()=> {
     console.log(`Server listening on ${PORT}`);
 });

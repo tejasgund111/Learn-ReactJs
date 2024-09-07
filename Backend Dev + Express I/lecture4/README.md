@@ -3,7 +3,7 @@
 -----------------------------------------------------------------------------------------
 something new :
 
-In commentModel.js >>
+In commentModel.js >>>
 
 post: {
     type: mongoose.Schema.Types.ObjectId, // Specifies that this field will store an ObjectId.

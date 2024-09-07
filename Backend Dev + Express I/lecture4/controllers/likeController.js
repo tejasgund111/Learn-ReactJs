@@ -27,7 +27,7 @@ exports.likePost = async (req, res) => {
     }
 };
 
-// unlike post
+// unlike the post
 exports.unlikePost = async (req, res) => {
     try {
         const { post, like } = req.body; // post ki id se post ki collection me delete kar denge and like ki id se like ke collection me delete kar denge
@@ -49,7 +49,7 @@ exports.unlikePost = async (req, res) => {
             error: "Error while unliking post"
         });
     }
-}
+};
 
 // whenever we are unliking the post we have to remove that data from likeModel as well as postModel because they are interlinked
 // so we have to update them both

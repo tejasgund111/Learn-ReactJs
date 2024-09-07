@@ -13,5 +13,5 @@ router.get("/posts", getAllPosts);
 router.post("/likes/like", likePost);
 router.post("/likes/unlike", unlikePost);
 
-// export
+// exports
 module.exports = router;

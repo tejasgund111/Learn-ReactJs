@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-
+// prerequisite for loading env
 require("dotenv").config();
 const DATABASE_URL = process.env.DATABASE_URL;
 

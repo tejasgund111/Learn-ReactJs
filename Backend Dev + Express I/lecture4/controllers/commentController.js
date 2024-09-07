@@ -21,7 +21,7 @@ exports.createComment = async (req, res) => {
             post, 
             { $push: { comments: savedComment._id } }, 
             { new: true }
-        ).populate("comments") // Populate the comments array with comment documents
+        ).populate("comments")  // Populate the comments array with comment documents
         .exec();
 
         // Send the updated post as the response

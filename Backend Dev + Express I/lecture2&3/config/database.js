@@ -13,4 +13,4 @@ const dbConnect = () => {
 
 module.exports = dbConnect;
 
-// this files ensures the connection between the application and the database
+// this files ensures the connection between the application and the database db

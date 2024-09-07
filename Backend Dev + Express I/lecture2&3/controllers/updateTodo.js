@@ -52,6 +52,5 @@ exports.updateTodo = async (req, res) => {
             data: "Internal server error",
             message: err.message
         })
-
     }
 }

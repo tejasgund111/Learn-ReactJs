@@ -7,4 +7,5 @@ Schema => description of your data is schema
 
 IMP : "Every path will be mapped to specific controller"
 
+
 Route ke sath map karne ke liye controller pehle fetch karke laao

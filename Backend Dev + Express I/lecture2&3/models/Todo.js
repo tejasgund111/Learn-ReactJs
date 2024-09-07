@@ -24,7 +24,6 @@ const todoSchema = new mongoose.Schema(
         }
     }
 );
-
 module.exports = mongoose.model("Todo", todoSchema); // "Todo" ke nam se export kar diya
 // converts "Todo" to lowercase and makes it plural -> so collection name will be created as "todos" in mongo database
 

@@ -17,9 +17,9 @@
 We are using a library called "bcrypt"
 It is a library to help you hashes passwords
 --------------------------------------------------------------------------------------
-
 secure password >>
 
+```
 let hashedPassword;
 try{
     // Hash the password with a salt rounds of 10
@@ -32,10 +32,18 @@ catch(error){
         message: "Error while hasing password",
     });
 }
+```
+
 Explanation :
+
 Hashing the Password:
-await bcrypt.hash(password, 10): This hashes the password with 10 salt rounds, which is a common practice to balance between security and performance.
+
+```await bcrypt.hash(password, 10) ```
+
+
+This hashes the password with 10 salt rounds, which is a common practice to balance between security and performance.
 10 salt rounds is used as a good practice
+
 --------------------------------------------------------------------------------------
 
 # During Signup 
@@ -59,7 +67,7 @@ await bcrypt.hash(password, 10): This hashes the password with 10 salt rounds, w
 - Whenever a user logs in then the server creates a JWT token and sends it to the client as response, then the next tasks like authenticity and authorization carried out with the help of that tokens, which is enclosing the user's information.
 
 --------------------------------------------------------------------------------------
-
+```
         try{
             const payload = jwt.verify(token, process.env.JWT_SECRET); // data inside token can be decoded like this
             console.log(payload); // it incudes email, id, role
@@ -72,6 +80,7 @@ await bcrypt.hash(password, 10): This hashes the password with 10 salt rounds, w
                 message : "Token is invalid"
             });
         }
+```
 Why Storing Payload in req.user is Useful:
 
 Storing the payload in req.user allows subsequent middleware and routes to easily access the authenticated user's information without needing to decode the token again.

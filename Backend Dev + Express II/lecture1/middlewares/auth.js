@@ -7,8 +7,8 @@ require("dotenv").config();
 exports.auth = (req, res, next) => { // next will give which is next middleware to be called
     try {
         // extract JWT token
-        // pending : other ways to fetch tokens
-        const token = req.body.token; // token is passed inside body
+        // 3 ways to extract token -> from cookies, body and header
+        const token = req.cookies.token || req.body.token || req.header("Authorization").replace("Bearer ",""); 
 
         if(!token){
             return res.status(401).json({

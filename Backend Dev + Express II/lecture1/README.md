@@ -96,3 +96,37 @@ req Object Lifecycle: The req object is shared along the middleware chain for a 
 - jwt.verify()
 - bcrypt.compare()
 --------------------------------------------------------------------------------------
+# Token extraction methods :
+1. From body
+```
+const token = req.body.token;
+```
+
+2. From cookies
+```
+const token = req.cookies.token
+```
+3. From header (The most secure way)
+- Authorization : Bearer <token> // key : value // pass this key value pairs inside the header section
+```
+const token = req.header("Authorization").replace("Bearer ","");
+```
+
+- Another method : Go inside the Authorization section in postman, choose type as Bearer token and pass the value, it will automatically generate the authorization header
+
+--------------------------------------------------------------------------------------
+# Expiry of cookie : (This is why portal makes us login again after several time)
+- Cookies in web applications can be configured to expire at a specific time. This is controlled by setting the Expires or Max-Age attributes of the cookie.
+- If cookie value is stored, then you'll be authenticated, not needed to login again and again.
+
+// Setting a cookie with the Expires attribute
+
+```res.cookie('user', 'Tejas', { expires: new Date('2024-12-31T23:59:59Z') }); // Expiry date set to December 31, 2024 ```
+
+// Setting a cookie with the Max-Age attribute
+
+```res.cookie('user', 'Tejas', { maxAge: 3600 * 1000 }); // Cookie expires in 1 hour ```
+
+--------------------------------------------------------------------------------------
+
+

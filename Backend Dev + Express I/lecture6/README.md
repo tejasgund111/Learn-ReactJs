@@ -1,4 +1,4 @@
-#Connecting frontend with backend 
+# Connecting frontend with backend 
 
 # Setting up mongodb cloud database
 steps :

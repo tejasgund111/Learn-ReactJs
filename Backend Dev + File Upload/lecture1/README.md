@@ -85,5 +85,15 @@
     5. Save the entry in DB
     6. Return successful response
 --------------------------------------------------------------------------------------------
+# pre and post middleware
+- Pre middleware functions are executed one after another, when each middleware calls next.
+- post middleware are executed after the hooked method and all of its pre middleware have completed.
+- fileSchema.post("save") function looks good for sending an email notification when a file is uploaded.
+- 
+--------------------------------------------------------------------------------------------
+# Mail functionality
+- Intent : Whenever there is creation of entry in DB, send a mail to the user.
+- Firstly we have to create transporter and then use that transporter to send the mail.
+
 
 

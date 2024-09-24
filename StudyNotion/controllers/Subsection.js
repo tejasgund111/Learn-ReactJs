@@ -9,6 +9,7 @@ exports.createSubsection = async (req, res) => {
         const { sectionId, title, timeDuration, description } = req.body;
         // extract file/video
         const video = req.files.videoFile;
+        // TODO : add check here -> user might not want to update the file here
         // validation
         if (!sectionId || !title || !timeDuration || !description || !video) {
             return res.status(400).json({

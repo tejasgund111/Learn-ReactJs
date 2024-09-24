@@ -9,7 +9,6 @@ exports.createSubsection = async (req, res) => {
         const { sectionId, title, timeDuration, description } = req.body;
         // extract file/video
         const video = req.files.videoFile;
-        // TODO : add check here -> user might not want to update the file here
         // validation
         if (!sectionId || !title || !timeDuration || !description || !video) {
             return res.status(400).json({
@@ -65,26 +64,26 @@ exports.updateSubsection = async (req, res) => {
                 message: "All fields are required"
             });
         }
-        // upload video to cloudinary
-        const uploadDetails = await uploadImageToCloudinary(video, process.env.FOLDER_NAME);
+        // TODO : add check here -> user might not want to update the file here
+        const updateData = {
+            title: title,
+            timeDuration: timeDuration,
+            description: description,
+        };
+
+        if (video) {
+            // upload video to cloudinary
+            const uploadDetails = await uploadImageToCloudinary(video, process.env.FOLDER_NAME);
+            updateData.videoUrl = uploadDetails.secure_url;
+        }
         // update data
-        const subSection = await Subsection.findByIdAndUpdate(subSectionId,
-            {
-                title : title,
-                timeDuration : timeDuration,
-                description : description,
-                videoUrl: uploadDetails.secure_url
-            },
-            { new: true });
+        const subSection = await Subsection.findByIdAndUpdate(subSectionId, updateData, { new: true });
 
         // return response
         return res.status(200).json({
             success: true,
             message: "Subsection updated successfully",
         });
-
-        
-
     }
     catch (error) {
         return res.status(500).json({
